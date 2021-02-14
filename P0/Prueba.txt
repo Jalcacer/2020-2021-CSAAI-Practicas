@@ -1,0 +1,2 @@
+Estoy probando como crear un fichero de texto desde 
+VSCode
