@@ -1,1 +1,5 @@
 /*Esto son comentarios enCSS*/
+body {
+    background-color: lightblue;
+    color: blue;
+}
