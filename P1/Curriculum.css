@@ -1,0 +1,15 @@
+body {
+    padding: 5px; /* relleno */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color: red;
+}
+
+h1 {
+    padding: 5px; /* relleno */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color: red;
+}
+
+/*#titulito1{}
