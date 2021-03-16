@@ -1,11 +1,6 @@
 body {
     background-image: url("cielo2.jpg");
-    padding: 5px; /* relle<no */
-    margin: 10px; /*Margen*/
-    border: solid;
-    border-color: red;
 }
-
 h1 {
     text-align: center;
     padding: 5px; /* relleno */
@@ -29,7 +24,19 @@ h2 {
 }
 
 derecha{
-    border: 10px double;
     width: 65%;
     float: right;
+    padding: 5px; /* relle<no */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color: red;
+}
+izquierda{
+    width: 31%;
+    float: left;
+    padding: 5px; /* relle<no */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color: red;
+
 }
