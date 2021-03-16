@@ -1,22 +1,35 @@
 body {
+    background-image: url("cielo2.jpg");
+    padding: 5px; /* relle<no */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color: red;
+}
+
+h1 {
+    text-align: center;
     padding: 5px; /* relleno */
     margin: 10px; /*Margen*/
     border: solid;
     border-color: red;
 }
+
+h2 {
+    border-bottom: red 10px double;
+}
+
 .Carnet {
     padding: 5px; /* relleno */
     margin: 5px; /*Margen*/
     border: solid;
     border-color: red;
-    margin-left:7cm;
+    margin-left:1cm;
+    margin-top: 1cm;
+    margin-bottom:1cm;
 }
 
-h1 {
-    padding: 5px; /* relleno */
-    margin: 10px; /*Margen*/
-    border: solid;
-    border-color: red;
+derecha{
+    border: 10px double;
+    width: 65%;
+    float: right;
 }
-
-/*#titulito1{}
