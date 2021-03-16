@@ -46,15 +46,23 @@ izquierda{
     border-color: red;
 
 }
+
+.titulito{
+    margin-left: 12.8cm;
+}
+
 .titulito1{
-    margin-left: 10.2cm;
-
+    margin-left: 13cm;
 }
+
 .titulito2{
-    margin-left: 11.2cm;
-
+    margin-left: 10.2cm;
 }
-.titulito3{
-    margin-left: 12cm;
 
+.titulito3{
+    margin-left: 11.2cm;
+}
+
+.titulito4{
+    margin-left: 12cm;
 }
