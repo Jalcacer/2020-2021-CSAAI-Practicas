@@ -26,7 +26,8 @@ h2 {
     margin-bottom:1cm;
 }
 .Interes{
-    margin: top 3cm;;
+    margin-top: 1cm;;
+    margin-bottom: 2cm;
 }
 derecha{
     width: 65%;
@@ -43,5 +44,17 @@ izquierda{
     margin: 10px; /*Margen*/
     border: solid;
     border-color: red;
+
+}
+.titulito1{
+    margin-left: 10.2cm;
+
+}
+.titulito2{
+    margin-left: 11.2cm;
+
+}
+.titulito3{
+    margin-left: 12cm;
 
 }
