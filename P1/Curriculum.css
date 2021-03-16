@@ -13,6 +13,9 @@ h2 {
     border-bottom: red 10px double;
 }
 
+.Wanted {
+    margin-left:4.5cm;
+}
 .Carnet {
     padding: 5px; /* relleno */
     margin: 5px; /*Margen*/
