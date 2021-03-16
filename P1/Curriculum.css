@@ -4,6 +4,13 @@ body {
     border: solid;
     border-color: red;
 }
+.Carnet {
+    padding: 5px; /* relleno */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color: red;
+    margin-left:7cm;
+}
 
 h1 {
     padding: 5px; /* relleno */
