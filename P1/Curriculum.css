@@ -46,6 +46,9 @@ izquierda{
     border-color: red;
 
 }
+ul {
+    list-style-image: url("sunny little.png");
+}
 
 .titulito{
     margin-left: 12.8cm;
