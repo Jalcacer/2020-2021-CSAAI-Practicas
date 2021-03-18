@@ -1,12 +1,12 @@
-@font-face{
+@font-face{ /*Declaro la fuente con la que quiero que se escriban los titulitos */
     font-family:"bouncy";
     src: url("bouncy.otf");
 }
 
-body {
+body{   /*Determino la imagen que quiero de fondo   */
     background-image: url("cielo2.jpg");
 }
-h1 {
+h1 { /* Estetica del titulo, posicion, y detalles de la caja  */
     text-align: center;
     padding: 5px; /* relleno */
     margin: 10px; /*Margen*/
@@ -14,11 +14,11 @@ h1 {
     border-color: red;
 }
 
-h2 {
+h2 { /*Color y definicion de un subrayado de los titulos*/
     border-bottom: red 10px double;
 }
 
-.Carnet {
+.Carnet { /*Estetica de la imagen de clase Carnet, margenes para centrarla a mi gusto y detalles de la caja que lo rodea */
     padding: 5px; /* relleno */
     margin: 5px; /*Margen*/
     border: solid;
@@ -27,11 +27,11 @@ h2 {
     margin-top: 1cm;
     margin-bottom:1cm;
 }
-.Interes{
+.Interes{ /* Centro la lista de la clase interes a mi gusto */
     margin-top: 1cm;;
     margin-bottom: 2cm;
 }
-derecha{
+derecha{ /*Detalles de la caja derecha */
     width: 65%;
     float: right;
     padding: 5px; /* relle<no */
@@ -39,7 +39,7 @@ derecha{
     border: solid;
     border-color: red;
 }
-izquierda{
+izquierda{/* */
     width: 31%;
     float: left;
     padding: 5px; /* relle<no */
@@ -48,10 +48,11 @@ izquierda{
     border-color: red;
 
 }
-ul {
+ul {/*Con esto estlizo las listas con una imagen en vez de un punto, no entiendo por que aparecen con el 
+    fondo blanco en vez de transparentes al ser png pero bueno lo he intentado con varias fotos y se sigue quedando asi*/
     list-style-image: url("sunny little.png");
 }
-.Encabezado{
+.Encabezado{ /* Fuentes de los titulos y margenes */
     font-family: bouncy;
 }
 .titizq{
