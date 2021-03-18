@@ -1,3 +1,8 @@
+@font-face{
+    font-family:"bouncy";
+    src: url("bouncy.otf");
+}
+
 body {
     background-image: url("cielo2.jpg");
 }
@@ -13,15 +18,12 @@ h2 {
     border-bottom: red 10px double;
 }
 
-.Wanted {
-    margin-left:4.5cm;
-}
 .Carnet {
     padding: 5px; /* relleno */
     margin: 5px; /*Margen*/
     border: solid;
     border-color: red;
-    margin-left:1cm;
+    margin-left: 1cm;
     margin-top: 1cm;
     margin-bottom:1cm;
 }
@@ -49,24 +51,34 @@ izquierda{
 ul {
     list-style-image: url("sunny little.png");
 }
-
+.Encabezado{
+    font-family: bouncy;
+}
+.titizq{
+    font-family: bouncy;
+}
 .titulito{
+    font-family: bouncy;
     margin-left: 12.8cm;
 }
 
 .titulito1{
+    font-family: bouncy;
     margin-left: 13cm;
 }
 
 .titulito2{
+    font-family: bouncy;
     margin-left: 10.2cm;
 }
 
 .titulito3{
+    font-family: bouncy;
     margin-left: 11.2cm;
 }
 
 .titulito4{
+    font-family: bouncy;
     margin-left: 12cm;
 }
 .parrafito{
