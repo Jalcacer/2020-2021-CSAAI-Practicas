@@ -1,4 +1,4 @@
-function manejador-parrafo()
+function manejador_parrafo()
 {
     console.log("Click sobre el parrafo...");
 }
