@@ -1,6 +1,6 @@
 //Elementos de la gui
 const gui = {
-    display : document.getElementById("display")
+    display : document.getElementById("display"),
     start : document.getElementById("start"),
     stop : document.getElementById("stop"),
     reset: document.getElementById("reset")
