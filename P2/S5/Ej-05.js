@@ -14,11 +14,10 @@ const gui= {
     boton_inc2: document.getElementById("boton_inc2"),
     boton_dec: document.getElementById("botn-dec2"),
 }
-
+class counter { //Ejemplo 6
 //Constructor del objeto
 //Se le pasa como parametro su display
-function counter(display)
-{
+constructor(display){
     this.valor = 0;
 
     //Almacenar su display
@@ -31,7 +30,7 @@ function counter(display)
         this.display.innerHtml = this.valor;
     }
 }
-
+}
 //Crear los objetos contadores
 const c1 = new counter(gui.display1);
 const c2 = new counter(gui.display2);
