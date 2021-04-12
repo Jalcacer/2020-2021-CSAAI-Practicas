@@ -13,8 +13,9 @@ const ctx = canvas.getContext("2d");
 let x = 0;
 let y = 10;
 
-//-- Velocidad horizontal del objeto
-let velx = 2;
+//-- Velocidades del objeto
+let velx = 3;
+let vely = 1;
 
 //-- Funcion principal de animacion
 function update() 
@@ -24,15 +25,19 @@ function update()
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
 
-  //-- Comprobar colisión con borde derecho
-  //-- Si se alcanza la anchura del canvas, se cambia la velocidad
-  //-- de signo (rebote)
-  if (x >= canvas.width) {
+   //-- Condicion de rebote en extremos verticales del canvas
+   if (x < 0 || x >= (canvas.width - 20) ) {
     velx = -velx;
+  }
+
+  //-- Condición de rebote en extremos horizontales del canvas
+  if (y <= 0 || y > 80) {
+    vely = -vely;
   }
 
   //-- Actualizar la posición
   x = x + velx;
+  y = y + vely;
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
