@@ -17,11 +17,15 @@ ctx.beginPath();
   ctx.rect(5,5, 100, 50);
 
   //-- Color de relleno del rectángulo
-  ctx.fillStyle = 'blue';
+  ctx.fillStyle = 'red';
 
-  //-- Mostrar el relleno
+  //-- Cambiar el tamaño de la linea del trazo
+  ctx.lineWidth = 4;
+  
+  //-- Rellenar
   ctx.fill();
 
   //-- Mostrar el trazo del rectángulo
   ctx.stroke();
+
 ctx.closePath();
