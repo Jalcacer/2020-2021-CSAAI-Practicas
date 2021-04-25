@@ -1,4 +1,5 @@
 body{
+    background-image: url("istockphoto-146774092-612x612.jpg");
     margin-left: 15cm;
     margin-right: 15cm;
     margin-top: 5cm; 
@@ -35,7 +36,7 @@ button{
     border-color: black;
     margin-left: 15 px;
     margin-right: 15 px;
-    padding: 12px;
-    width:60px;
+    padding: 14px;
+    width: 80px;
     margin-top: 3px;
 }
