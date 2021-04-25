@@ -1,0 +1,22 @@
+
+.carcasa{
+    padding-top: 22px;
+    padding-bottom: 25px;
+    background-color: grey;
+    border-radius: 20px 20px 20px 20px;
+    border: 8px groove;
+    border-color: blueviolet;
+    text-align: center;
+    width: 550px;
+}
+p{
+    border-radius:20px 20px 20px 20px;
+    border: 3px groove;
+    border-color: black;
+    background-color: white;
+    text-align: right;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 20px;
+
+}
