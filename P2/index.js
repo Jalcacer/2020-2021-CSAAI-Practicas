@@ -8,3 +8,29 @@ ans = document.getElementById("ans");
 let numeros = document.getElementsByClassName("n");
 let operacion = document.getElementsByClassName("operacion");
 
+
+//Ahora trabajo en los estados de la calculadora
+
+const Estados = {
+    Inicio : 0,
+    Opcion1 : 1,
+    Operar : 2,
+    Opcion2 : 3,
+}
+
+//Hago que la calculadora se inicie en el estado 0
+
+let estado = Estados.Inicio;
+
+function calculadora (numeros){
+    if (estado == Estado.Inicio){
+        display.innerHTML = numeros;
+        estado = Estado.Op1;
+    }else if (estado == Estado.Op1){
+        display.innerHTML += numeros;
+    }else if (estado == Estado.Operar){
+        display.innerHTML += numeros;
+    }else if (estado == Estado.Op2){
+        display.innerHTML += numeros;
+    }
+}
