@@ -22,6 +22,8 @@ const Estados = {
 
 let estado = Estados.Inicio;
 
+// Con este if defino los estados 
+
 function calculadora (numeros){
     if (estado == Estado.Inicio){
         display.innerHTML = numeros;
@@ -32,5 +34,29 @@ function calculadora (numeros){
         display.innerHTML += numeros;
     }else if (estado == Estado.Op2){
         display.innerHTML += numeros;
+    }
+}
+
+// con estos bucles y funcion , evaluo los numeros que se pulsen, 
+// evaluo las operaciones y hago que se oase al siguiente estado 
+for (i=0; i<numeros.length; i++){
+    numeros[i].onclick = (ev) =>{
+        calculadora(ev.target.value);
+    }
+}
+
+function calculos(operador){
+    if (estado != Estados.Operar){
+        display.innerHTML += oprador;
+        estado = Estados.Operar;
+    }
+}
+
+for (i = 0; i<operacion.length; i++){
+    operacion[i].onclick = (ev) => {
+        if(estado == Estados.Opcion1){
+            display.innerHTML += ev.target.value;
+            estado = Estados.Opera;
+        }
     }
 }
