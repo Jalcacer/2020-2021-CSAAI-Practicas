@@ -1,9 +1,14 @@
+@font-face{
+    font-family:"bouncy";
+    src: url("bouncy.otf");
+}
 body{
     background-image:url("HubbleLegacyField.jpg");
 }
 h2 {
+    font-family: bouncy;
     margin-top: 5cm;
-    margin-left: 20.5cm;
+    margin-left: 20cm;
     color: cornsilk;
 }
 canvas {
