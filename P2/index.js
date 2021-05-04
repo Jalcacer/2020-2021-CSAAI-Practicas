@@ -68,3 +68,8 @@ igual.onclick = () => {
     ans.value = display.innerHTML;
     estado = Estado.Op1;
 }
+
+ans.onclick = () => {
+    display.innerHTML += ans.value;
+    estado = ESTADO.OP2;
+ }
