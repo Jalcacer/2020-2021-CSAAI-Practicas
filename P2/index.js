@@ -60,3 +60,11 @@ for (i = 0; i<operacion.length; i++){
         }
     }
 }
+
+//Evaluacion de las teclas cuando estas sean pulsadas
+
+igual.onclick = () => {
+    display.innerHTML = eval(display.innerHTML);
+    ans.value = display.innerHTML;
+    estado = Estado.Op1;
+}
