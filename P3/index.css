@@ -1,7 +1,16 @@
+body{
+    background-image:url("HubbleLegacyField.jpg");
+}
+h2 {
+    margin-top: 5cm;
+    margin-left: 20.5cm;
+    color: cornsilk;
+}
 canvas {
-    background-color: lightblue;
+    margin-left: 15cm ;
+    background-color:darkturquoise;
     border-style: solid;
-    border-width: 1px;
-    border-color: black;
+    border-width: 3px;
+    border-color:darkmagenta;
     border-radius: 5px;
   }
