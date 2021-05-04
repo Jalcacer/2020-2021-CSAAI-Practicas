@@ -8,18 +8,32 @@ canvas.height = 400;
 
 const ctx = canvas.getContext("2d");
 
+let ball = {
+    x: canvas.width /2,
+    y: canvas.height - 50,
+    dx: 0,
+    dy: 0,
+    radius: 7,
+    draw: function() {
+        ctx.beginPath();
 
-ctx.beginPath();
-    //-- Dibujar un circulo: coordenadas x,y del centro
-    //-- Radio, Angulo inicial y angulo final
-    ctx.arc(100, 50, 10, 0, 2 * Math.PI);
-    ctx.lineWidth = 3;
-    ctx.fillStyle = 'red';
+        //-- Dibujar un circulo: coordenadas x,y del centro
+        //-- Radio, Angulo inicial y angulo final
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+        ctx.lineWidth = 3;
+        ctx.fillStyle = 'red';
 
-    //-- Dibujar el trazo
-    ctx.stroke()
+        //-- Dibujar el trazos
+        ctx.stroke()
 
-    //-- Dibujar el relleno
-    ctx.fill()
+        //-- Dibujar el relleno
+        ctx.fill()
     
-ctx.closePath()
+        ctx.closePath();
+    }    
+}
+function update(){
+    ball.draw();
+    requestAnimationFrame(update);
+}
+update();
