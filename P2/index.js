@@ -78,3 +78,12 @@ ans.onclick = () => {
     display.innerHTML = "0";
     estado = Estado.Inicio;
 }
+
+
+borrar.onclick = () => {
+    if(display.innerHTML == "0"){
+        display.innerHTML = "0";
+    }else{
+        display.innerHTML = display.innerHTML.slice(0,-1);
+    }
+}
