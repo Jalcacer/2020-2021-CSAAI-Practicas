@@ -87,3 +87,7 @@ borrar.onclick = () => {
         display.innerHTML = display.innerHTML.slice(0,-1);
     }
 }
+
+sqrt.onclick = () => {
+    display.innerHTML = Math.sqrt(display.innerHTML);
+}
