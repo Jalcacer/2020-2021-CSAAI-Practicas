@@ -25,14 +25,14 @@ let estado = Estados.Inicio;
 // Con este if defino los estados 
 
 function calculadora (numeros){
-    if (estado == Estado.Inicio){
+    if (estado == Estados.Inicio){
         display.innerHTML = numeros;
-        estado = Estado.Op1;
-    }else if (estado == Estado.Op1){
+        estado = Estados.Op1;
+    }else if (estado == Estados.Opcion1){
         display.innerHTML += numeros;
-    }else if (estado == Estado.Operar){
+    }else if (estado == Estados.Operar){
         display.innerHTML += numeros;
-    }else if (estado == Estado.Op2){
+    }else if (estado == Estados.Opcion2){
         display.innerHTML += numeros;
     }
 }
@@ -56,7 +56,7 @@ for (i = 0; i<operacion.length; i++){
     operacion[i].onclick = (ev) => {
         if(estado == Estados.Opcion1){
             display.innerHTML += ev.target.value;
-            estado = Estados.Opera;
+            estado = Estados.Operar;
         }
     }
 }
