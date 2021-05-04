@@ -2,7 +2,7 @@
 display = document.getElementById("display");
 igual = document.getElementById("igual");
 borrar = document.getElementById(borrar);
-reset = document.getElementById(borrar);
+reset = document.getElementById(resetear);
 sqrt = document.getElementsByName("sqrt");
 ans = document.getElementById("ans");
 let numeros = document.getElementsByClassName("n");
@@ -74,7 +74,7 @@ ans.onclick = () => {
     estado = Estados.Opcion2;
  }
 
- reset.onclick = () => {
+reset.onclick = () => {
     display.innerHTML = "0";
     estado = Estados.Inicio;
 }
