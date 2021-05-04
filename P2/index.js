@@ -66,17 +66,17 @@ for (i = 0; i<operacion.length; i++){
 igual.onclick = () => {
     display.innerHTML = eval(display.innerHTML);
     ans.value = display.innerHTML;
-    estado = Estado.Op1;
+    estado = Estados.Opcion1;
 }
 
 ans.onclick = () => {
     display.innerHTML += ans.value;
-    estado = ESTADO.OP2;
+    estado = Estados.Opcion2;
  }
 
  reset.onclick = () => {
     display.innerHTML = "0";
-    estado = Estado.Inicio;
+    estado = Estados.Inicio;
 }
 
 
