@@ -73,3 +73,8 @@ ans.onclick = () => {
     display.innerHTML += ans.value;
     estado = ESTADO.OP2;
  }
+
+ reset.onclick = () => {
+    display.innerHTML = "0";
+    estado = Estado.Inicio;
+}
