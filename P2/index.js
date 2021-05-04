@@ -27,7 +27,7 @@ let estado = Estados.Inicio;
 function calculadora (numeros){
     if (estado == Estados.Inicio){
         display.innerHTML = numeros;
-        estado = Estados.Op1;
+        estado = Estados.Opcion1;
     }else if (estado == Estados.Opcion1){
         display.innerHTML += numeros;
     }else if (estado == Estados.Operar){
@@ -77,6 +77,7 @@ ans.onclick = () => {
 reset.onclick = () => {
     display.innerHTML = "0";
     estado = Estados.Inicio;
+    ans.value = "0";
 }
 
 
@@ -88,6 +89,7 @@ borrar.onclick = () => {
     }
 }
 
+//no se por que este onclick no funciona, tengo que trabajar en ello
 sqrt.onclick = () => {
     display.innerHTML = Math.sqrt(display.innerHTML);
 }
