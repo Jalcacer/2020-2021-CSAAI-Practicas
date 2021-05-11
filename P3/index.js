@@ -7,22 +7,18 @@ canvas.width = 520;
 canvas.height = 400;
 
 const ctx = canvas.getContext("2d");
-
-let ball = {
-    x: canvas.width /2,
-    y: canvas.height - 50,
-    dx: 0,
-    dy: 0,
-    radius: 7,
-    draw: function() {
+//variables importantes para el juego
+    var x = canvas.width /2;
+    var y =  canvas.height - 50;
+    var radius = 7;
+    function pelota(){  
         ctx.beginPath();
 
         //-- Dibujar un circulo: coordenadas x,y del centro
         //-- Radio, Angulo inicial y angulo final
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
         ctx.lineWidth = 3;
         ctx.fillStyle = 'red';
-
         //-- Dibujar el trazos
         ctx.stroke()
 
@@ -31,9 +27,8 @@ let ball = {
     
         ctx.closePath();
     }    
-}
 function update(){
-    ball.draw();
-    requestAnimationFrame(update);
+    pelota();
+    requestAnimationFrame(updates);
 }
 update();
