@@ -44,13 +44,29 @@ const ladrillos = {
     visible: true
 }
 
-const ladrillos = [];
+const ladrillos2 = [];
 
+//filas y columnas de ladrillos
+
+for (let i = 0; i < ladrillos.fila;i++){
+    ladrillos2[i] = [];
+
+    for (let j = 0; j < ladrillos.columnas; j++){
+        ladrillos2[i][j] = {
+        x : (ladrillos.ancho + ladrillos.marco) *j,
+        y : (ladrillos.alto + ladrillos.marco) * i,
+        ancho : ladrillos.ancho,
+        alto : ladrillos.alto,
+        marco :  ladrillos.marco,
+        visible : ladrillos.visible
+        }
+    }
+}
 
 
 
 function update(){
     pelota();
-    requestAnimationFrame(updates);
+    requestAnimationFrame(update);
 }
 update();
