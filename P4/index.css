@@ -1,3 +1,6 @@
-body{
-    background-image: url("windows.jpg");
+#image1{
+    padding: 5px; /* relleno */
+    margin: 5px; /*Margen*/
+    border: solid;
+    border-color: black;
 }
