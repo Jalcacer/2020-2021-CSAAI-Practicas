@@ -16,21 +16,33 @@ const ctx = canvas.getContext("2d");
     var velx = 0;
     var vely = 0;
 
-    function pelota(){  
-        ctx.beginPath();
+// Variables de la raqueta
+    var largo = 60;
+    var alto = 5;
+    var xraq =(canvas.width - largo)/2;
+    var yraq =canvas.height - 55;
 
-        //-- Dibujar un circulo: coordenadas x,y del centro
-        //-- Radio, Angulo inicial y angulo final
-        ctx.arc(x, y, radius, 0, Math.PI * 2);
-        ctx.lineWidth = 3;
-        ctx.fillStyle = 'red';
-        //-- Dibujar el trazos
-        ctx.stroke()
+// Variables movimiento raqueta
 
-        //-- Dibujar el relleno
-        ctx.fill()
-    
-        ctx.closePath();
+    var rightPressed = false;
+    var leftPressed = false;
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
+
+function pelota(){  
+    ctx.beginPath();
+
+    //-- Dibujar un circulo: coordenadas x,y del centro
+    //-- Radio, Angulo inicial y angulo final
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.lineWidth = 3;
+    ctx.fillStyle = 'red';
+    //-- Dibujar el trazos
+    ctx.stroke()
+
+    //-- Dibujar el relleno
+    ctx.fill()
+    ctx.closePath();
     }
     
 
@@ -50,11 +62,7 @@ const ladrillos = {
 
 const ladrillos2 = [];
 
-// Variables de la raqueta
-var largo = 60;
-var alto = 5;
-var xraq =(canvas.width - largo)/2;;
-var yraq =canvas.height - 55;
+
 // Raqueta 
 function raqueta(){
 
@@ -89,12 +97,39 @@ for (let i = 0; i < ladrillos.fila;i++){
         }
     }
 }
+// teclas para movimiento raqueta 
+function keyDownHandler(e){
+    if (e.keyCode == 39)//derecha
+    {
+        rightPressed = true;
+
+    }else if (e.keyCode == 37 )//izq
+    {
+        leftPressed = true;
+    }
+}
+function keyUpHandler(e){
+        if (e.keyCode == 39)//derecha
+        {
+            rightPressed = false;
+    
+        }else if (e.keyCode == 37 )//izq
+        {
+            leftPressed = false;
+        }
+}
 
 
-
-function update(){
+function main(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     pelota();
     raqueta();
-    requestAnimationFrame(update);
+    
+    if(rightPressed && xraq < canvas.width - largo){
+        xraq += 7;
+    }else if(leftPressed && xraq > 0) {
+        xraq -= 7;
+    }
+    requestAnimationFrame(main);
 }
-update();
+main();
