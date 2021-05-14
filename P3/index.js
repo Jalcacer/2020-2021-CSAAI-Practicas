@@ -3,13 +3,14 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 520;
-canvas.height = 400;
+canvas.width = 700;
+canvas.height = 600;
 
 const ctx = canvas.getContext("2d");
+
 //variables importantes para el juego
     var x = canvas.width /2;
-    var y =  canvas.height - 50;
+    var y =  canvas.height - 75;
     var radius = 7;
 //Velocidades en los ejes de la pelota
     var velx = 0;
@@ -32,6 +33,9 @@ const ctx = canvas.getContext("2d");
         ctx.closePath();
     }
     
+
+
+
 // Una vez dibujada la pelota debemos seguir con la raqueta donde rebotara 
 // y con los ladrillos que el jugador debera romper
 // Empezare con los ladrillos
@@ -45,6 +49,29 @@ const ladrillos = {
 }
 
 const ladrillos2 = [];
+
+// Variables de la raqueta
+var largo = 60;
+var alto = 5;
+var xraq =(canvas.width - largo)/2;;
+var yraq =canvas.height - 55;
+// Raqueta 
+function raqueta(){
+
+    ctx.beginPath();
+    ctx.rect(xraq, yraq, largo, alto,);
+    ctx.lineWidth = 1;
+    ctx.fillStyle = 'black';
+
+    //-- Dibujar el trazos
+    ctx.stroke()
+
+    //-- Dibujar el relleno
+    ctx.fill()
+
+    ctx.closePath();
+}
+
 
 //filas y columnas de ladrillos
 
@@ -67,6 +94,7 @@ for (let i = 0; i < ladrillos.fila;i++){
 
 function update(){
     pelota();
+    raqueta();
     requestAnimationFrame(update);
 }
 update();
