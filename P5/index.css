@@ -1,13 +1,33 @@
-#directo{
-    margin-left: 17cm;
+body{
+    background-image: url("gris.jpg");
 }
 
+#directo{
+    
+    padding: 5px; /* relleno */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color:black;
+    margin-left: 17cm;
+}
+#video1{
+    padding: 5px; /* relleno */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color:black;
+}
+#video2{
+    padding: 5px; /* relleno */
+    margin: 10px; /*Margen*/
+    border: solid;
+    border-color:black;
+}
 table{
-    margin-left: 17.3cm;
+    margin-left: 17.5cm;
     margin-top:  2cm;
 }
 
 .botones{
-    margin-left: 20.3cm;
+    margin-left: 21cm;
     margin-top: 2cm;
 }
