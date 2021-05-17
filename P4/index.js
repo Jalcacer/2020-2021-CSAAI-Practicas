@@ -12,8 +12,9 @@ const B = document.getElementById("B");
 const range_value_R = document.getElementById("range_value_R");
 const range_value_G = document.getElementById("range_value_G");
 const range_value_B = document.getElementById("range_value_B");
+const tabla = document.getElementById("table_RGB")
 imagen1.onload = function () {
-
+  document.getElementById('table_RGB').style.display = 'none'
   console.log("Imagen cargada");
   canvas.width = imagen1.width;
   canvas.height = imagen1.height;
@@ -62,6 +63,8 @@ function RGB(){
 
 const colores = document.getElementById("colores")
   colores.onclick = () => {
+    document.getElementById('table_RGB').style.display = 'inline-block'
+
     R.oninput = () => {
       RGB()
     }
@@ -102,4 +105,6 @@ function ByN(){
 const byn = document.getElementById("ByN")
   byn.onclick = () => {
     ByN();
+    document.getElementById('table_RGB').style.display = 'none'
+
   }
