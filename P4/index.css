@@ -1,5 +1,6 @@
 body{
     margin-top: 4cm;
+    background-image: url("cielo2.jpg");
 }
 @font-face{
     font-family:"bouncy";
@@ -10,14 +11,16 @@ body{
     margin-left: 12.5cm;
     margin-top: 1cm;
     font-family: bouncy;
+    font-size: medium;
 }
 .titulo2{
-    margin-left: 15cm;
+    margin-left: 14cm;
     margin-top: 1cm;
     font-family: bouncy;
+    font-size: medium;
 }
 #imagenes {
-    margin-left: 5.5cm;
+    margin-left: 6cm;
 }
 #botones{
     margin-left: 19.3cm;
