@@ -74,3 +74,32 @@ const colores = document.getElementById("colores")
     }
 
   }
+//Funcion para blanco y negro 
+function ByN(){
+//  Imagen sin cambios 
+    ctx.drawImage(img, 0,0);
+
+// La pasamos a pixeles
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+// Obtener el array con todos los píxeles
+    let data = imgData.data
+
+// Filtrar la imagen
+    for (let i = 0; i < data.length; i+=4) {
+// Asignamos variables RGB
+      var r = data[i];
+      var g = data[i+1];
+      var b = data[i+2];
+      brillo = (3 * r + 4 * g + b)/8
+      data[i] = brillo;
+      data[i+1] = brillo;
+      data[i+2] = brillo;
+  }
+  ctx.putImageData(imgData, 0, 0);
+}
+
+const ByN = document.getElementById("ByN")
+  grises.onclick = () => {
+    ByN();
+  }
