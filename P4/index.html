@@ -22,10 +22,29 @@
     <p>imagen manipulada</p>
     <canvas id="canvas"></canvas>
     <div class="controladores">
-    <p>Rojo<input type="range" id="r" min="0" max="1" value="1" step="0.1">R</p>
-    <p>Verde<input type="range" id="g" min="0" max="1" value="1" step="0.1">G</p>
-    <p>Azul<input type="range" id="b" min="0" max="1" value="1" step="0.1">B</p>
+    <p>Rojo<input type="range" id="R" min="0" max="255" value="255">R</p>
+    <p>Verde<input type="range" id="G" min="0" max="255" value="255">G</p>
+    <p>Azul<input type="range" id="B" min="0" max="255" value="255">B</p>
     </div>
 
+    <table id="table_RGB" style="width:100%">
+        <tr>
+          <th>R</th>
+          <th>G</th>
+          <th>B</th>
+        </tr>
+  
+        <tr>
+          <th><input type="range" id="R" min="0" max="255" value="255"/></th>
+          <th><input type="range" id="G" min="0" max="255" value="255"/></th>
+          <th><input type="range" id="B" min="0" max="255" value="255"/></th>
+        </tr>
+  
+        <tr>
+          <th><p id="range_value_R">00</p></th>
+          <th><p id="range_value_G">00</p></th>
+          <th><p id="range_value_B">00</p></th>
+        </tr>
+    </table>
 </body>
 </html>
