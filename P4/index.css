@@ -1,17 +1,28 @@
+body{
+    margin-top: 4cm;
+}
+@font-face{
+    font-family:"bouncy";
+    src: url("bouncy.otf");
+}
+
 .titulo1{
     margin-left: 12.5cm;
     margin-top: 1cm;
+    font-family: bouncy;
 }
 .titulo2{
     margin-left: 15cm;
     margin-top: 1cm;
+    font-family: bouncy;
 }
 #imagenes {
     margin-left: 5.5cm;
 }
 #botones{
-    margin-left: 20cm;
+    margin-left: 19.3cm;
     margin-top: 1cm;
+    font-family: bouncy;
 }
 #table_RGB{
     margin-left: 17.5cm;
