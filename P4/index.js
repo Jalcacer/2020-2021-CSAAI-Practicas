@@ -4,6 +4,8 @@ console.log("Ejecutando JS....")
 const canvas = document.getElementById('canvas');
 const img = document.getElementById('imagen1');
 const ctx = canvas.getContext('2d');
+
+//Constantes de los deslizadores 
 const R = document.getElementById("R");
 const G = document.getElementById("G");
 const B = document.getElementById("B");
@@ -22,10 +24,10 @@ ctx.drawImage(img, 0,0);
 }
 
 //Funcion deslizadores
-function RGB (){
+function RGB(){
   range_value_R.innerHTML = R.value;
-  range_value_R.innerHTML = G.value;
-  range_value_R.innerHTML = B.value;
+  range_value_G.innerHTML = G.value;
+  range_value_B.innerHTML = B.value;
 
 //Dibunjamos la imagen sin cambios
   ctx.drawImage(img, 0,0);
@@ -37,9 +39,10 @@ function RGB (){
   let data = imgData.data;
 
 //Obtenemos los umbrales de los deslizadores
-  umbral_R = R.value;
-  umbral_G = G.value;
-  umbral_B = B.value;
+  var umbral_R = R.value;
+  var umbral_G = G.value;
+  var umbral_B = B.value;
+
 //Cambiamos la imagen segun el nuevo umbral
 
   for (let i = 0; i < data.length; i+=4) {
@@ -56,3 +59,18 @@ function RGB (){
 // Dibujamos esta vez la imagen modificada 
   ctx.putImageData(imgData, 0, 0);
 }
+
+const colores = document.getElementById("colores")
+  colores.onclick = () => {
+    R.oninput = () => {
+      RGB()
+    }
+
+    G.oninput = () => {
+      RGB()
+    }
+    B.oninput = () => {
+      RGB()
+    }
+
+  }
