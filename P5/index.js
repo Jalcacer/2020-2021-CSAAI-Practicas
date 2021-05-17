@@ -31,7 +31,7 @@ btn_src_on.onclick = () => {
   video1.play();
 
   //-- Y en silencio...
-  video1.muted;
+  video1.muted = true;
 
   //-- En la emisión en directo ponemos la imagen de prueba
   directo.poster = TEST_IMAGE_URL;
