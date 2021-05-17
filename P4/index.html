@@ -10,31 +10,37 @@
 </head>
 
 <body>
-    <p>imagen original</p>
+    <p class="titulo1">imagen original</p>
     <img id ="imagen1" margin-left = 5cm  src="alpaca.jpg" alt="Alpaca">
+    
     <div id="botones">
         <button id="ByN">Blanco y Negro</button>
         <button id="colores">COLORES</button>
     </div>
-    <p>imagen manipulada</p>
-    <canvas id="canvas"></canvas>
+
     <table id="table_RGB" style="width:100%">
-        <tr>
-          <th>R</th>
-          <th>G</th>
-          <th>B</th>
-        </tr>
-        <tr>
-          <th><input type="range" id="R" min="0" max="255" value="255"/></th>
-          <th><input type="range" id="G" min="0" max="255" value="255"/></th>
-          <th><input type="range" id="B" min="0" max="255" value="255"/></th>
-        </tr>
-  
-        <tr>
-          <th><p id="range_value_R">00</p></th>
-          <th><p id="range_value_G">00</p></th>
-          <th><p id="range_value_B">00</p></th>
-        </tr>
-    </table>
+      <tr>
+        <th>R</th>
+        <th>G</th>
+        <th>B</th>
+      </tr>
+      <tr>
+        <th><input type="range" id="R" min="0" max="255" value="255"/></th>
+        <th><input type="range" id="G" min="0" max="255" value="255"/></th>
+        <th><input type="range" id="B" min="0" max="255" value="255"/></th>
+      </tr>
+
+      <tr>
+        <th><p id="range_value_R">00</p></th>
+        <th><p id="range_value_G">00</p></th>
+        <th><p id="range_value_B">00</p></th>
+      </tr>
+      
+  </table>
+    <p class="titulo2">imagen manipulada</p>
+    <div class="lienzo">
+    <canvas id="canvas"></canvas>
+    </div>
+
 </body>
 </html>
