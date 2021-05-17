@@ -99,7 +99,7 @@ function ByN(){
   ctx.putImageData(imgData, 0, 0);
 }
 
-const ByN = document.getElementById("ByN")
-  grises.onclick = () => {
+const byn = document.getElementById("ByN")
+  byn.onclick = () => {
     ByN();
   }
