@@ -1,12 +1,16 @@
 
-.titulo1{
-    margin-left: 22cm;
-}
 .titulo2{
-    margin-left: 22cm;
+    margin-left: 31cm;
     margin-top: 1cm;
 }
-
+#imagenes {
+    margin-left: 5.5cm;
+}
+#botones{
+    margin-left: 20cm;
+    margin-top: 1cm;
+}
 #table_RGB{
-    margin-left: 22cm;
+    margin-left: 17.5cm;
+    margin-top:2cm;
 }
