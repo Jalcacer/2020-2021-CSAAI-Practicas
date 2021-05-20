@@ -53,10 +53,10 @@ function pelota(){
 // Empezare con los ladrillos
 
 const LADRILLO = {
-    F: 8,   //-- Filas
+    F: 6,   //-- Filas
     C: 13,   //-- Columnas
-    w: 30,  //-- Anchura
-    h: 20,  //-- Altura
+    w: 40,  //-- Anchura
+    h: 30,  //-- Altura
     padding: 10,  //-- Espacio alrededor del ladrillo
     visible: true //-- Estado del ladrillo: activo o no
   }
