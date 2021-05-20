@@ -13,8 +13,8 @@ const ctx = canvas.getContext("2d");
     var y =  canvas.height - 75;
     var radius = 7;
 //Velocidades en los ejes de la pelota
-    var velx = 0;
-    var vely = 0;
+    var velx = 3;
+    var vely = -3;
 
 // Variables de la raqueta
     var largo = 60;
@@ -29,9 +29,8 @@ const ctx = canvas.getContext("2d");
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
 
-function pelota(){  
+function pelota(){ 
     ctx.beginPath();
-
     //-- Dibujar un circulo: coordenadas x,y del centro
     //-- Radio, Angulo inicial y angulo final
     ctx.arc(x, y, radius, 0, Math.PI * 2);
@@ -39,14 +38,10 @@ function pelota(){
     ctx.fillStyle = 'red';
     //-- Dibujar el trazos
     ctx.stroke()
-
     //-- Dibujar el relleno
     ctx.fill()
     ctx.closePath();
     }
-    
-
-
 
 // Una vez dibujada la pelota debemos seguir con la raqueta donde rebotara 
 // y con los ladrillos que el jugador debera romper
@@ -120,6 +115,7 @@ for (let i = 0; i < LADRILLO.fila;i++){
         }
     }
 }
+
 // teclas para movimiento raqueta 
 function keyDownHandler(e){
     if (e.keyCode == 39)//derecha
@@ -129,7 +125,7 @@ function keyDownHandler(e){
     }else if (e.keyCode == 37 )//izq
     {
         leftPressed = true;
-    }
+    }   
 }
 function keyUpHandler(e){
         if (e.keyCode == 39)//derecha
@@ -161,11 +157,27 @@ function main(){
             } 
         }
     }
+
+    if (x + velx > canvas.width - radius || x + velx < radius ){
+        velx = -velx;
+    }
+    if (y + vely < radius){
+        vely = -vely;
+    }else if (y + vely > canvas.height - radius){
+        if (x > xraq && x < xraq + largo){
+            velx = 3;
+            vely = -3;        }
+    }
+
+
+
     if(rightPressed && xraq < canvas.width - largo){
         xraq += 7;
     }else if(leftPressed && xraq > 0) {
         xraq -= 7;
     }
+    x += velx;
+    y += vely;
     requestAnimationFrame(main);
 }
 main();
