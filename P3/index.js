@@ -53,8 +53,8 @@ function pelota(){
 // Empezare con los ladrillos
 
 const LADRILLO = {
-    F: 2,   //-- Filas
-    C: 3,   //-- Columnas
+    F: 8,   //-- Filas
+    C: 13,   //-- Columnas
     w: 30,  //-- Anchura
     h: 20,  //-- Altura
     padding: 10,  //-- Espacio alrededor del ladrillo
@@ -149,12 +149,12 @@ function main(){
     raqueta();
 
     //-- Dibujar ladrillos
-    for (let i = 5; i < LADRILLO.F; i++) {
-        for (let j = 5; j < LADRILLO.C; j++) {
+    for (let i = 1; i < LADRILLO.F; i++) {
+        for (let j = 1; j < LADRILLO.C; j++) {
         //-- Si el ladrillo es visible se pinta
-            if (LADRILLO[i][j].visible){   
+            if (ladrillo[i][j].visible){   
                 ctx.beginPath();
-                ctx.rect(LADRILLO[i][j].x, LADRILLO[i][j].y, LADRILLO.w, LADRILLO.h);
+                ctx.rect(ladrillo[i][j].x, ladrillo[i][j].y, LADRILLO.w, LADRILLO.h);
                 ctx.fillStyle = 'black';
                 ctx.fill();
                 ctx.closePath();
