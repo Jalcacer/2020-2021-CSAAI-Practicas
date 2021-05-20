@@ -13,8 +13,8 @@ const ctx = canvas.getContext("2d");
     var y =  canvas.height - 75;
     var radius = 7;
 //Velocidades en los ejes de la pelota
-    var velx = 3;
-    var vely = -3;
+    var velx = 0;
+    var vely = 0;
 
 // Variables de la raqueta
     var largo = 60;
@@ -125,6 +125,10 @@ function keyDownHandler(e){
     }else if (e.keyCode == 37 )//izq
     {
         leftPressed = true;
+    }else if (e.keyCode == 32 )//izq
+    {
+        velx = 3;
+        vely = -3;
     }   
 }
 function keyUpHandler(e){
@@ -165,8 +169,9 @@ function main(){
         vely = -vely;
     }else if (y + vely > canvas.height - radius){
         if (x > xraq && x < xraq + largo){
-            velx = 3;
-            vely = -3;        }
+            velx = -velx;
+            vely = -vely;        
+        }
     }
 
 
