@@ -51,17 +51,40 @@ function pelota(){
 // Una vez dibujada la pelota debemos seguir con la raqueta donde rebotara 
 // y con los ladrillos que el jugador debera romper
 // Empezare con los ladrillos
-const ladrillos = {
-    fila:8,
-    columnas:13,
-    altura:20,
-    ancho:60,
-    marco:1,
-    visible: true
+
+const LADRILLO = {
+    F: 2,   //-- Filas
+    C: 3,   //-- Columnas
+    w: 30,  //-- Anchura
+    h: 20,  //-- Altura
+    padding: 10,  //-- Espacio alrededor del ladrillo
+    visible: true //-- Estado del ladrillo: activo o no
+  }
+
+//-- Creación de los ladrillos. La estructura se almacena 
+//-- en el objeto ladrillos, que inicialmente está vacío
+const ladrillo = [];
+
+//-- Recorrer todas las filas. La variable i toma valores de 0 hasta F-1 (número de filas)
+for (let i = 0; i < LADRILLO.F; i++) {
+
+  ladrillo[i] = [];  //-- Inicializar la fila. Las filas son a su vez Arrays que inicialmente están vacíos
+
+  //-- Recorrer las C columnas de la fila i. La variable j toma valores de 0 hasta C-1 (numero de columnas)
+  for (let j = 0; j < LADRILLO.C; j++) {
+
+    //-- Calcular valores para el ladrillo de la fila i y la columna j
+    //-- Algunos valores son constates. Otros depeden de i y j
+    ladrillo[i][j] = {
+      x: (LADRILLO.w + LADRILLO.padding) * j,
+      y: (LADRILLO.h + LADRILLO.padding) * i,
+      w: LADRILLO.w,
+      h: LADRILLO.h,
+      padding: LADRILLO.padding,
+      visible: LADRILLO.visible
+    };
+  }
 }
-
-const ladrillos2 = [];
-
 
 // Raqueta 
 function raqueta(){
@@ -83,17 +106,17 @@ function raqueta(){
 
 //filas y columnas de ladrillos
 
-for (let i = 0; i < ladrillos.fila;i++){
-    ladrillos2[i] = [];
+for (let i = 0; i < LADRILLO.fila;i++){
+    ladrillo[i] = [];
 
-    for (let j = 0; j < ladrillos.columnas; j++){
-        ladrillos2[i][j] = {
-        x : (ladrillos.ancho + ladrillos.marco) *j,
-        y : (ladrillos.alto + ladrillos.marco) * i,
-        ancho : ladrillos.ancho,
-        alto : ladrillos.alto,
-        marco :  ladrillos.marco,
-        visible : ladrillos.visible
+    for (let j = 0; j < LADRILLO.columnas; j++){
+        ladrillo[i][j] = {
+        x : (LADRILLO.ancho + LADRILLO.marco) *j,
+        y : (LADRILLO.alto + LADRILLO.marco) * i,
+        ancho : LADRILLO.ancho,
+        alto : LADRILLO.alto,
+        marco :  LADRILLO.marco,
+        visible : LADRILLO.visible
         }
     }
 }
@@ -124,7 +147,20 @@ function main(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     pelota();
     raqueta();
-    
+
+    //-- Dibujar ladrillos
+    for (let i = 5; i < LADRILLO.F; i++) {
+        for (let j = 5; j < LADRILLO.C; j++) {
+        //-- Si el ladrillo es visible se pinta
+            if (LADRILLO[i][j].visible){   
+                ctx.beginPath();
+                ctx.rect(LADRILLO[i][j].x, LADRILLO[i][j].y, LADRILLO.w, LADRILLO.h);
+                ctx.fillStyle = 'black';
+                ctx.fill();
+                ctx.closePath();
+            } 
+        }
+    }
     if(rightPressed && xraq < canvas.width - largo){
         xraq += 7;
     }else if(leftPressed && xraq > 0) {
