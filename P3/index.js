@@ -30,7 +30,7 @@ const ctx = canvas.getContext("2d");
 
 //Variables vidas y puntuacion 
 var vidas = 3;
-var puntuacion = 0;
+var puntos = 0;
 
 function pelota(){ 
     ctx.beginPath();
@@ -119,6 +119,19 @@ for (let i = 0; i < LADRILLO.fila;i++){
     }
 }
 
+function intentos(){
+    ctx.fillStyle = "black";
+    ctx.fillText("Intentos:" +vidas, 10, 18);
+    ctx.font = "20px bouncy";
+}
+
+function puntuacion(){
+    ctx.fillStyle = "black";
+    ctx.fillText("Puntos:" + puntos, 920, 18);
+    ctx.font = "20px bouncy";
+    
+}
+
 // teclas para movimiento raqueta 
 function keyDownHandler(e){
     if (e.keyCode == 39)//derecha
@@ -150,7 +163,8 @@ function main(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     pelota();
     raqueta();
-
+    intentos();
+    puntuacion();
     //-- Dibujar ladrillos
     for (let i = 1; i < LADRILLO.F; i++) {
         for (let j = 1; j < LADRILLO.C; j++) {
