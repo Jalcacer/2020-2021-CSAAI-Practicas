@@ -122,13 +122,13 @@ for (let i = 0; i < LADRILLO.fila;i++){
 function intentos(){
     ctx.fillStyle = "black";
     ctx.fillText("Intentos:" +vidas, 10, 18);
-    ctx.font = "15px  arial";
+    ctx.font = "20px  arial";
 }
 
 function puntuacion(){
     ctx.fillStyle = "black";
     ctx.fillText("Puntos:" + puntos, 600, 18);
-    ctx.font = "15px arial";
+    ctx.font = "20px arial";
     
 }
 
@@ -205,6 +205,23 @@ function main(){
           velx = -velx
           vely = -vely
       }
+    }
+
+    if (y >= canvas.height){
+        //Posiciones y velocidad de la pelota y raqueta al perder vida
+        velx = 0;
+        vely = 0;
+        x = canvas.width/2;
+        y = canvas.height - 75;
+        xraq = (canvas.width - largo)/2;
+        vidas -= 1;//Resto 1 a la variable vida
+  
+    }else if(vidas == 0){
+        //Posiciones y velocidad de la pelota y raqueta al perder la partida:
+        velx = 0;
+        vely = 0;
+        xraq = (canvas.width - largo)/2;
+
     }
 
     if(rightPressed && xraq < canvas.width - largo){
