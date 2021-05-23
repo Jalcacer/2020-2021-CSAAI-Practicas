@@ -15,12 +15,12 @@ const ctx = canvas.getContext("2d");
 //Velocidades en los ejes de la pelota
     var velx = 0;
     var vely = 0;
+    var aleat = (Math.random() * 4) + 4;
 
 // Variables de la raqueta
-    var largo = 60;
-    var alto = 5;
+    var largo = 75;
+    var alto = 10;
     var xraq =(canvas.width - largo)/2;
-    var yraq =canvas.height - 55;
 
 // Variables movimiento raqueta
 
@@ -85,7 +85,7 @@ for (let i = 0; i < LADRILLO.F; i++) {
 function raqueta(){
 
     ctx.beginPath();
-    ctx.rect(xraq, yraq, largo, alto,);
+    ctx.rect(xraq, canvas.height-alto, largo, alto,);
     ctx.lineWidth = 1;
     ctx.fillStyle = 'black';
 
@@ -168,7 +168,7 @@ function main(){
             if ((y >= ladrillo[i][j].y) && (y <= (ladrillo[i][j].y + 20))){
               if ((x >= ladrillo[i][j].x) && (x <= (ladrillo[i][j].x + 70))){
                 ladrillo[i][j].visible = false;
-                vely = -vely;
+                vely = - vely;
               }
             }
           }
@@ -182,12 +182,13 @@ function main(){
         vely = -vely;
     }else if (y + vely > canvas.height - radius){
         if (x > xraq && x < xraq + largo){
-            let rebote = x - (xraq + largo/2);
-            rebote = rebote /(largo/2);
-            velx = 0;
-            vely = 0;        
-        }
-    }
+            let puntoColision = x - (xraq + largo/2);
+          puntoColision = puntoColision / (largo/2);
+          let angulo = puntoColision * Math.PI/3;
+          velx = aleat * Math.sin(angulo);
+          vely = -aleat * Math.cos(angulo);
+      }
+  }
 
 
 
