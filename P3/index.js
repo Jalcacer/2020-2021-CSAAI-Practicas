@@ -162,6 +162,19 @@ function main(){
         }
     }
 
+    for (let i = 1; i < LADRILLO.F; i++) {//Inicializo en 1 porque igual lo hice en el bucle de arriba
+        for (let j = 1; j < LADRILLO.C; j++) {
+          if (ladrillo[i][j].visible) {
+            if ((y >= ladrillo[i][j].y) && (y <= (ladrillo[i][j].y + 20))){
+              if ((x >= ladrillo[i][j].x) && (x <= (ladrillo[i][j].x + 70))){
+                ladrillo[i][j].visible = false;
+                vely = -vely;
+              }
+            }
+          }
+        }
+      }
+
     if (x + velx > canvas.width - radius || x + velx < radius ){
         velx = -velx;
     }
@@ -169,8 +182,10 @@ function main(){
         vely = -vely;
     }else if (y + vely > canvas.height - radius){
         if (x > xraq && x < xraq + largo){
-            velx = -velx;
-            vely = -vely;        
+            let rebote = x - (xraq + largo/2);
+            rebote = rebote /(largo/2);
+            velx = 0;
+            vely = 0;        
         }
     }
 
@@ -181,6 +196,7 @@ function main(){
     }else if(leftPressed && xraq > 0) {
         xraq -= 7;
     }
+
     x += velx;
     y += vely;
     requestAnimationFrame(main);
