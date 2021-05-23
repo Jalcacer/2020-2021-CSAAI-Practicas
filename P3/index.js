@@ -122,13 +122,13 @@ for (let i = 0; i < LADRILLO.fila;i++){
 function intentos(){
     ctx.fillStyle = "black";
     ctx.fillText("Intentos:" +vidas, 10, 18);
-    ctx.font = "20px bouncy";
+    ctx.font = "15px bouncy";
 }
 
 function puntuacion(){
     ctx.fillStyle = "black";
-    ctx.fillText("Puntos:" + puntos, 920, 18);
-    ctx.font = "20px bouncy";
+    ctx.fillText("Puntos:" + puntos, 600, 18);
+    ctx.font = "15px bouncy";
     
 }
 
@@ -205,9 +205,7 @@ function main(){
           velx = -velx
           vely = -vely
       }
-  }
-
-
+    }
 
     if(rightPressed && xraq < canvas.width - largo){
         xraq += 7;
