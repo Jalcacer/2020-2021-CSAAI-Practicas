@@ -97,12 +97,9 @@ function raqueta(){
 
     //-- Dibujar el relleno
     ctx.fill()
-
     ctx.closePath();
 }
 
-
-//filas y columnas de ladrillos
 
 for (let i = 0; i < LADRILLO.fila;i++){
     ladrillo[i] = [];
@@ -165,10 +162,10 @@ function main(){
     raqueta();
     intentos();
     puntuacion();
-    //-- Dibujar ladrillos
+
+    // Dibujar ladrillos
     for (let i = 1; i < LADRILLO.F; i++) {
         for (let j = 1; j < LADRILLO.C; j++) {
-        //-- Si el ladrillo es visible se pinta
             if (ladrillo[i][j].visible){   
                 ctx.beginPath();
                 ctx.rect(ladrillo[i][j].x, ladrillo[i][j].y, LADRILLO.w, LADRILLO.h);
@@ -178,20 +175,22 @@ function main(){
             } 
         }
     }
-
-    for (let i = 1; i < LADRILLO.F; i++) {//Inicializo en 1 porque igual lo hice en el bucle de arriba
+    //  Colision con los ladrillos 
+    for (let i = 1; i < LADRILLO.F; i++) {
         for (let j = 1; j < LADRILLO.C; j++) {
           if (ladrillo[i][j].visible) {
             if ((y >= ladrillo[i][j].y) && (y <= (ladrillo[i][j].y + 20))){
               if ((x >= ladrillo[i][j].x) && (x <= (ladrillo[i][j].x + 70))){
                 ladrillo[i][j].visible = false;
                 vely = - vely;
+                puntos += 1;
               }
             }
           }
         }
-      }
+    }
 
+    //  Rebote con las paredes y la raqueta    
     if (x + velx > canvas.width - radius || x + velx < radius ){
         velx = -velx;
     }
@@ -202,34 +201,36 @@ function main(){
             let puntoColision = x - (xraq + largo/2);
           puntoColision = puntoColision / (largo/2);
           let angulo = puntoColision * Math.PI/3;
-          velx = -velx
-          vely = -vely
+          velx = velx;
+          vely = -vely;
       }
     }
 
+    //  perdida de vidas
     if (y >= canvas.height){
-        //Posiciones y velocidad de la pelota y raqueta al perder vida
         velx = 0;
         vely = 0;
         x = canvas.width/2;
         y = canvas.height - 75;
         xraq = (canvas.width - largo)/2;
-        vidas -= 1;//Resto 1 a la variable vida
-  
+        vidas -= 1;
     }else if(vidas == 0){
-        //Posiciones y velocidad de la pelota y raqueta al perder la partida:
         velx = 0;
         vely = 0;
         xraq = (canvas.width - largo)/2;
-
     }
 
+    //  has ganado 
+    if(puntos == 60){
+        velx = 0;
+        vely = 0;
+    }
+    //Movimiento raqueta 
     if(rightPressed && xraq < canvas.width - largo){
         xraq += 7;
     }else if(leftPressed && xraq > 0) {
         xraq -= 7;
     }
-
     x += velx;
     y += vely;
     requestAnimationFrame(main);
