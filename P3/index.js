@@ -15,7 +15,6 @@ const ctx = canvas.getContext("2d");
 //Velocidades en los ejes de la pelota
     var velx = 0;
     var vely = 0;
-    var aleat = (Math.random() * 4) + 4;
 
 // Variables de la raqueta
     var largo = 75;
@@ -28,6 +27,10 @@ const ctx = canvas.getContext("2d");
     var leftPressed = false;
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
+
+//Variables vidas y puntuacion 
+var vidas = 3;
+var puntuacion = 0;
 
 function pelota(){ 
     ctx.beginPath();
@@ -185,8 +188,8 @@ function main(){
             let puntoColision = x - (xraq + largo/2);
           puntoColision = puntoColision / (largo/2);
           let angulo = puntoColision * Math.PI/3;
-          velx = aleat * Math.sin(angulo);
-          vely = -aleat * Math.cos(angulo);
+          velx = -velx
+          vely = -vely
       }
   }
 
